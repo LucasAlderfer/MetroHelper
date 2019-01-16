@@ -1,36 +1,36 @@
 class TrainUpdateService
 
-  def default(params = "&country=us")
-    display_array = []
-    articles = get_default(params)['articles']
-    articles.each do |article|
-      author = article['author']
-      source_id = article['source']['id']
-      source_name = article['source']['name']
-      title = article['title']
-      description = article['description']
-      url = article['url']
-      urltoimage = article['urlToImage']
-      published_at = article['publishedAt']
-      article_array = [author, source_id, source_name, title, description, url, urltoimage, published_at]
-      new_article = Article.new(article_array)
-      display_array << new_article
+  def initialize(station_code)
+    @all_trains = []
+    @station = station_code
+  end
+
+  def get_trains
+    trains = get_times(@station)['Trains']
+    trains.each do |train|
+      size = train['Car']
+      destination = train['DestinationName']
+      line = train['Line']
+      time = train['Min']
+      train_array = [size, destination, line, time]
+      new_train = Train.new(train_array)
+      @all_trains << new_train
     end
-    display_array
+    @all_trains
   end
 
   private
 
   def conn
-    Faraday.new(url: "https://newsapi.org")
+    Faraday.new(url: "https://api.wmata.com")
   end
 
   def request(url)
     JSON.parse(conn.get(url).body)
   end
 
-  def get_default(params = "&country=us")
-    request("/v2/top-headlines?apiKey=#{ENV['NEWS_API_KEY']}" + params)
+  def get_times(station)
+    request("/StationPrediction.svc/json/GetPrediction/#{station}?api_key=#{ENV['WMATA_API_KEY']}")
   end
 
 end
