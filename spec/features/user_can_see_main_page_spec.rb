@@ -11,5 +11,13 @@ describe 'visiting /routes' do
 
       expect(page).to have_css('.line', count: 6)
     end
+
+    it 'can be redirected to a line page by clicking on the line name' do
+      visit '/routes'
+
+      click_on "red"
+
+      expect(current_path).to eq('/red')
+    end
   end
 end
