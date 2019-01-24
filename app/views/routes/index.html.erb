@@ -1,7 +1,7 @@
 <main>
   <% @lines.each do |line| %>
     <div class="line">
-      <h3><%= link_to "#{line.name}", "/#{line.name}" %></h3>
+      <%= link_to "#{line.name}", "/#{line.name}" %>
     </div>
   <% end %>
 </main>
