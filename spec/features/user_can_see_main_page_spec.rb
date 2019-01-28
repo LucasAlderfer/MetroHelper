@@ -7,6 +7,7 @@ describe 'visiting /routes' do
       line_names.each do |name|
         Line.create(name: name)
       end
+      
       visit '/routes'
 
       expect(page).to have_css('.line', count: 6)

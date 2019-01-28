@@ -6,6 +6,7 @@ describe Station, type: :model do
   end
 
   context 'relationships' do
-    it { should belong_to(:line) }
+    it { should have_many(:lines) }
+    it { should have_many(:line_stations)}
   end
 end
