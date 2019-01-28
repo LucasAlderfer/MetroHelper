@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190124203315) do
+ActiveRecord::Schema.define(version: 20190128045605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "line_stations", force: :cascade do |t|
+    t.bigint "line_id"
+    t.bigint "station_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["line_id"], name: "index_line_stations_on_line_id"
+    t.index ["station_id"], name: "index_line_stations_on_station_id"
+  end
 
   create_table "lines", force: :cascade do |t|
     t.string "name"
@@ -24,11 +33,10 @@ ActiveRecord::Schema.define(version: 20190124203315) do
   create_table "stations", force: :cascade do |t|
     t.string "name"
     t.string "station_code"
-    t.bigint "line_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["line_id"], name: "index_stations_on_line_id"
   end
 
-  add_foreign_key "stations", "lines"
+  add_foreign_key "line_stations", "lines"
+  add_foreign_key "line_stations", "stations"
 end
