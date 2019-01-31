@@ -1,28 +1,27 @@
 class LinesController < ApplicationController
 
-  def Red
+  def red
     @red_stations = Line.find_by_name('red').stations
   end
 
-  def Blue
+  def blue
     blue_line = Line.find_by_name('blue')
-    binding.pry
     @blue_stations = blue_line.stations
   end
 
-  def Green
+  def green
     @green_stations = Line.find_by_name('green').stations
   end
 
-  def Yellow
+  def yellow
     @yellow_stations = Line.find_by_name('yellow').stations
   end
 
-  def Silver
+  def silver
     @silver_stations = Line.find_by_name('silver').stations
   end
 
-  def Orange
+  def orange
     @orange_stations = Line.find_by_name('orange').stations
   end
 
