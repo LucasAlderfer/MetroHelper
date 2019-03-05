@@ -9,7 +9,7 @@ describe 'visiting /red' do
 
       visit '/red'
 
-      expect(page).to have_css('.station', count: 28)
+      expect(page).to have_css('.station', count: 29)
 
       visit '/blue'
 

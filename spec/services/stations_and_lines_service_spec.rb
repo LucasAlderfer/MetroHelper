@@ -13,7 +13,7 @@ describe StationsAndLinesService do
 
     line_stations = StationsAndLinesService.new.create_line_stations
 
-    expect(line_stations.count).to eq(151)
+    expect(line_stations.count).to eq(152)
     #Includes line_stations for all double named stations
   end
 end
