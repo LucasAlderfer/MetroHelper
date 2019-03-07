@@ -1,7 +1,11 @@
 <main>
-  <% @red_stations.each do |station| %>
-    <div class="station">
-      <%= link_to station.name, station_path(station) %>
-    </div>
-  <% end %>
+  <h1 class="heading">Red Line</h1>
+  <h3 class="sub-heading">Select What Station You Are Using</h3>
+  <div class="stations">
+    <% @red_stations.each do |station| %>
+      <div class="station">
+        <%= link_to station.name, station_path(station) %>
+      </div>
+    <% end %>
+  </div>
 </main>

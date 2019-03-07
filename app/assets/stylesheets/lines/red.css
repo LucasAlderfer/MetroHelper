@@ -1,0 +1,19 @@
+.heading {
+  height: 5vh;
+  text-align: center;
+  margin: 0;
+}
+
+.sub-heading {
+  height: 2vh;
+  text-align: center;
+}
+
+.stations {
+  display: flex;
+  flex-direction: column;
+}
+
+.station {
+  height: 3vh;
+}

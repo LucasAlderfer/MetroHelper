@@ -9,6 +9,10 @@ class StationController < ApplicationController
       @names << line.name.capitalize
     end
     find_trains = TrainUpdateService.new(current_station.station_code).get_trains
-    @trains = TrainSorterService.new(find_trains)
+    unless current_station.alternate_station_code.nil?
+      alternate_trains = TrainUpdateService.new(current_station.alternate_station_code).get_trains
+      find_trains << alternate_trains
+    end
+    @trains = TrainSorterService.new(find_trains.flatten)
   end
 end
