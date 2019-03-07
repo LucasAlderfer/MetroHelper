@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20190128045605) do
   create_table "stations", force: :cascade do |t|
     t.string "name"
     t.string "station_code"
+    t.string "alternate_station_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

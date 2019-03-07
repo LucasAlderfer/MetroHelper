@@ -31,5 +31,26 @@ describe 'visiting /station/1' do
       expect(page).to have_content('Silver Trains: 6 car train to Station_5 in 2 minutes')
       expect(page).to have_content('Orange Trains: 6 car train to Station_6 in 2 minutes')
     end
+
+    it 'can see all trains coming to the station even when the station has two station codes' do
+      station_1 = Station.create(name: "Metro Center", station_code: "A01", alternate_station_code: "C01")
+      line_1 = Line.create(name: "red")
+      line_2 = Line.create(name: "blue")
+      line_3 = Line.create(name: "orange")
+      line_4 = Line.create(name: "silver")
+      line_station_1 = station_1.line_stations.create(line: line_1)
+      line_station_2 = station_2.line_stations.create(line: line_2)
+      line_station_3 = station_2.line_stations.create(line: line_3)
+      line_station_4 = station_2.line_stations.create(line: line_4)
+      train_1 = Train.new(["6", "Metro Center", "RD", "2"])
+      train_2 = Train.new(["6", "Metro Center", "RD", "4"])
+      train_3 = Train.new(["6", "Metro Center", "BL", "2"])
+      train_4 = Train.new(["6", "Metro Center", "OR", "2"])
+      train_5 = Train.new(["6", "Metro Center", "SV", "2"])
+      train_6 = Train.new(["6", "Metro Center", "YL", "4"])
+      train_7 = Train.new(["6", "Metro Center", "YL", "6"])
+      train_8 = Train.new(["6", "Metro Center", "SV", "2"])
+      train_9 = Train.new(["6", "Metro Center", "OR", "2"])
+    end
   end
 end

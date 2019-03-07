@@ -1,6 +1,6 @@
 <main>
-  <h1><%= @station.name %></h1>
-  <h3>Lines: <%= @names.join(', ') %></h3>
+  <h1 class="heading"><%= @station.name %></h1>
+  <h3 class="sub-heading">Lines: <%= @names.join(', ') %></h3>
 
   <% unless @trains.red_trains.count == 0 %>
     <% train_string = @trains.red_trains.map do |train| %>

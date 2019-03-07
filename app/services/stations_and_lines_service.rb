@@ -3,8 +3,7 @@ class StationsAndLinesService
   def initialize
     @lines = ['red', 'blue', 'yellow', 'orange', 'green', 'silver']
     @stations = [
-      ['A01', 'Metro Center'],
-      ['C01', 'Metro Center'],
+      ['A01', 'Metro Center', 'C01'],
       ['A02', 'Farragut North'],
       ['A03', 'Dupont Circle'],
       ['A04', 'Woodley Park-Zoo/Adams Morgan'],
@@ -19,14 +18,12 @@ class StationsAndLinesService
       ['A13', 'Twinbrook'],
       ['A14', 'Rockville'],
       ['A15', 'Shady Grove'],
-      ['B01', 'Gallery Pl-Chinatown'],
-      ['F01', 'Gallery Pl-Chinatown'],
+      ['B01', 'Gallery Pl-Chinatown', 'F01'],
       ['B02', 'Judiciary Square'],
       ['B03', 'Union Station'],
       ['B04', 'Rhode Island Ave-Brentwood'],
       ['B05', 'Brookland-CUA'],
-      ['B06', 'Fort Totten'],
-      ['E06', 'Fort Totten'],
+      ['B06', 'Fort Totten', 'E06'],
       ['B07', 'Takoma'],
       ['B08', 'Silver Spring'],
       ['B09', 'Forest Glen'],
@@ -48,8 +45,7 @@ class StationsAndLinesService
       ['C15', 'Huntington'],
       ['D01', 'Federal Triangle'],
       ['D02', 'Smithsonian'],
-      ['D03', "L'Enfant Plaza"],
-      ['F03', "L'Enfant Plaza"],
+      ['D03', "L'Enfant Plaza", 'F03'],
       ['D04', 'Federal Center SW'],
       ['D05', 'Capitol South'],
       ['D06', 'Eastern Market'],
@@ -104,9 +100,6 @@ class StationsAndLinesService
       ['A01', 'orange'],
       ['A01', 'silver'],
       ['A01', 'red'],
-      ['C01', 'blue'],
-      ['C01', 'orange'],
-      ['C01', 'silver'],
       ['A02', 'red'],
       ['A03', 'red'],
       ['A04', 'red'],
@@ -122,7 +115,6 @@ class StationsAndLinesService
       ['A14', 'red'],
       ['A15', 'red'],
       ['B01', 'red'],
-      ['F01', 'red'],
       ['B02', 'red'],
       ['B03', 'red'],
       ['B04', 'red'],
@@ -173,11 +165,6 @@ class StationsAndLinesService
       ['D03', 'silver'],
       ['D03', 'yellow'],
       ['D03', 'green'],
-      ['F03', 'orange'],
-      ['F03', 'blue'],
-      ['F03', 'silver'],
-      ['F03', 'yellow'],
-      ['F03', 'green'],
       ['D04', 'orange'],
       ['D04', 'blue'],
       ['D04', 'silver'],
@@ -267,7 +254,7 @@ class StationsAndLinesService
   def create_stations
     all_stations = []
     @stations.each do |station|
-      new_station = Station.create(name: station[1], station_code: station[0])
+      new_station = Station.create(name: station[1], station_code: station[0], alternate_station_code: station[2])
       all_stations << new_station
     end
     all_stations

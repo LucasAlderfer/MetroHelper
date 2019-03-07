@@ -1,3 +1,42 @@
+.lines {
+  display: flex;
+  flex-direction: column;
+}
+
 .line {
-  color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 12vh;
+}
+
+.heading {
+  height: 5vh;
+  text-align: center;
+  margin: 0;
+}
+
+.sub-heading {
+  height: 2vh;
+  text-align: center;
+}
+
+#red {
+  background-color: red;
+}
+#blue {
+  background-color: blue;
+}
+#yellow {
+  background-color: yellow;
+}
+#green {
+  background-color: green;
+}
+#orange {
+  background-color: orange;
+}
+#silver {
+  background-color: silver;
 }

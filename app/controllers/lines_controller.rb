@@ -5,8 +5,7 @@ class LinesController < ApplicationController
   end
 
   def blue
-    blue_line = Line.find_by_name('blue')
-    @blue_stations = blue_line.stations
+    @blue_stations = Line.find_by_name('blue').stations
   end
 
   def green

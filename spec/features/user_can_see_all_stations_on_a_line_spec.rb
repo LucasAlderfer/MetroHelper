@@ -9,27 +9,27 @@ describe 'visiting /red' do
 
       visit '/red'
 
-      expect(page).to have_css('.station', count: 29)
+      expect(page).to have_css('.station', count: 27)
 
       visit '/blue'
 
-      expect(page).to have_css('.station', count: 29)
+      expect(page).to have_css('.station', count: 27)
 
       visit '/green'
 
-      expect(page).to have_css('.station', count: 20)
+      expect(page).to have_css('.station', count: 19)
 
       visit '/silver'
 
-      expect(page).to have_css('.station', count: 30)
+      expect(page).to have_css('.station', count: 28)
 
       visit '/orange'
 
-      expect(page).to have_css('.station', count: 28)
+      expect(page).to have_css('.station', count: 26)
 
       visit '/yellow'
 
-      expect(page).to have_css('.station', count: 16)
+      expect(page).to have_css('.station', count: 15)
     end
   end
 end

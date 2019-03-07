@@ -1,7 +1,24 @@
 <main>
-  <% @lines.each do |line| %>
-    <div class="line">
-      <%= link_to "#{line.name}", "/#{line.name}" %>
+  <h1 class="heading">DC Metro Helper</h1>
+  <h3 class="sub-heading">Select What Line You Are Travelling</h3>
+  <div class="lines">
+    <div class="line" id='red'>
+      <%= link_to "Red", red_path %>
     </div>
-  <% end %>
+    <div class="line" id='blue'>
+      <%= link_to "Blue", blue_path %>
+    </div>
+    <div class="line" id='yellow'>
+      <%= link_to "Yellow", yellow_path %>
+    </div>
+    <div class="line" id='green'>
+      <%= link_to "Green", green_path %>
+    </div>
+    <div class="line" id='orange'>
+      <%= link_to "Orange", orange_path %>
+    </div>
+    <div class="line" id='silver'>
+      <%= link_to "Silver", silver_path %>
+    </div>
+  </div>
 </main>
