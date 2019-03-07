@@ -103,6 +103,7 @@ class StationsAndLinesService
       ['A01', 'blue'],
       ['A01', 'orange'],
       ['A01', 'silver'],
+      ['A01', 'red'],
       ['C01', 'blue'],
       ['C01', 'orange'],
       ['C01', 'silver'],

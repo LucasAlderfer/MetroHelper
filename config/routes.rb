@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get '/silver', to: 'lines#silver'
   get '/yellow', to: 'lines#yellow'
   get '/green', to: 'lines#green'
+
+  resources :station, only: [:show]
 end
