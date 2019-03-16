@@ -2,45 +2,47 @@
   <h1 class="heading"><%= @station.name %></h1>
   <h3 class="sub-heading">Lines: <%= @names.join(', ') %></h3>
 
-  <% unless @trains.red_trains.count == 0 %>
-    <% train_string = @trains.red_trains.map do |train| %>
-      <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
-    <% end.join(', ') %>
-    <h3>Red Trains: <%= train_string %>
-  <% end %>
+  <div class="lines">
+    <% unless @trains.red_trains.count == 0 %>
+      <% train_string = @trains.red_trains.map do |train| %>
+        <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
+      <% end.join(', ') %>
+      <h3>Red Trains:</h3> <p><%= train_string %></p>
+    <% end %>
 
-  <% unless @trains.blue_trains.count == 0 %>
-    <% train_string = @trains.blue_trains.map do |train| %>
-      <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
-    <% end.join(', ') %>
-    <h3>Blue Trains: <%= train_string %>
-  <% end %>
+    <% unless @trains.blue_trains.count == 0 %>
+      <% train_string = @trains.blue_trains.map do |train| %>
+        <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
+      <% end.join(', ') %>
+      <h3>Blue Trains:</h3> <p><%= train_string %></p>
+    <% end %>
 
-  <% unless @trains.green_trains.count == 0 %>
-    <% train_string = @trains.green_trains.map do |train| %>
-      <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
-    <% end.join(', ') %>
-    <h3>Green Trains: <%= train_string %>
-  <% end %>
+    <% unless @trains.green_trains.count == 0 %>
+      <% train_string = @trains.green_trains.map do |train| %>
+        <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
+      <% end.join(', ') %>
+      <h3>Green Trains:</h3> <p><%= train_string %></p>
+    <% end %>
 
-  <% unless @trains.yellow_trains.count == 0 %>
-    <% train_string = @trains.yellow_trains.map do |train| %>
-      <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
-    <% end.join(', ') %>
-    <h3>Yellow Trains: <%= train_string %>
-  <% end %>
+    <% unless @trains.yellow_trains.count == 0 %>
+      <% train_string = @trains.yellow_trains.map do |train| %>
+        <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
+      <% end.join(', ') %>
+      <h3>Yellow Trains:</h3> <p><%= train_string %></p>
+    <% end %>
 
-  <% unless @trains.silver_trains.count == 0 %>
-    <% train_string = @trains.silver_trains.map do |train| %>
-      <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
-    <% end.join(', ') %>
-    <h3>Silver Trains: <%= train_string %>
-  <% end %>
+    <% unless @trains.silver_trains.count == 0 %>
+      <% train_string = @trains.silver_trains.map do |train| %>
+        <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
+      <% end.join(', ') %>
+      <h3>Silver Trains:</h3> <p><%= train_string %></p>
+    <% end %>
 
-  <% unless @trains.orange_trains.count == 0 %>
-    <% train_string = @trains.orange_trains.map do |train| %>
-      <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
-    <% end.join(', ') %>
-    <h3>Orange Trains: <%= train_string %>
-  <% end %>
+    <% unless @trains.orange_trains.count == 0 %>
+      <% train_string = @trains.orange_trains.map do |train| %>
+        <% "#{train.size} car train to #{train.destination} in #{train.time} minutes" %>
+      <% end.join(', ') %>
+      <h3>Orange Trains:</h3> <p><%= train_string %></p>
+    <% end %>
+  </div>
 </main>

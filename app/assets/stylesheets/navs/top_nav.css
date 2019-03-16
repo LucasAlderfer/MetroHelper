@@ -1,0 +1,32 @@
+.top-nav {
+  height: 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 3px double #2f2f2f;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.top-nav h3 {
+  margin-right: 10vw;
+  font-family: 'Ramaraja', serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.top_nav a:hover {
+  background-color: blue;
+}
+
+.top-nav h1 {
+  font-family: 'Ramaraja', serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 0;
+}
