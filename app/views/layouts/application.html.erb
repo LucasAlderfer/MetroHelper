@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ProjectPractice</title>
+    <title>Metro Helper</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <%= render partial: "navs/top_nav" %>
     <%= yield %>
   </body>
 </html>
